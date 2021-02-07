@@ -1,8 +1,9 @@
-import React, { createContext, useContet, useReducer } from 'react';
+import React, { createContext, useReducer } from 'react';
+import appReducer from './appReducer';
 
 export const AppContext = createContext();
 
-const nominatedMoviesFromLS = localStorage.getItems('movies') ? JSON.parse(localStorage.getItem('movies')) : [];
+const nominatedMoviesFromLS = localStorage.getItem('nominatedMovies') ? JSON.parse(localStorage.getItem('nominatedMovies')) : [];
 
 const initialState = {
   loadingMovies: false,
@@ -11,3 +12,14 @@ const initialState = {
   nominatedMovies: nominatedMoviesFromLS,
   basketOpen: false
 }
+
+export const AppContextProvider = props => {
+  const [state, dispatch] = useReducer(appReducer, initialState);
+
+  return(
+    <AppContext.Provider value = {[state, dispatch]}>
+      {props.children}
+    </AppContext.Provider>
+  )
+}
+
