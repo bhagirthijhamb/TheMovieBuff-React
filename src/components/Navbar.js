@@ -8,8 +8,6 @@ const Navbar = () => {
   const [ state, dispatch ] = useContext(AppContext);
   const { basketOpen, nominatedMovies } = state;
 
-  console.log(basketOpen, nominatedMovies);
-
   const toggleBasket = () => {
     dispatch({ type: TOGGLE_BASKET })
   }

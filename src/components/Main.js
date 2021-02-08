@@ -9,8 +9,6 @@ const Main = () => {
   const [movie, setMovie] = useState('');
   const [state, dispatch] = useContext(AppContext);
 
-  console.log(movie)
-
   const fetchMovies = async(movie) => {
     try {
       dispatch({ type: MOVIES_REQUEST });

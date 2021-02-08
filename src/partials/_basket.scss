@@ -1,0 +1,102 @@
+.nominatedMovies_container {
+  width: 22rem;
+  position: fixed;
+  top: 0;
+  left: -22rem;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  z-index: 3;
+  background: #f1fafd;
+  padding: 1rem;
+  transition: 2s ease-in;
+  transform: translateX((100%));
+  transition: transform .5s ease-in;
+
+  h2 {
+      font-size: 2.5rem;
+  }
+}
+
+.nominatedMovies_movieList {
+  padding-left: .5rem;
+}
+        
+.hideNominatedMovies {
+    font-size: 2rem;
+    cursor: pointer
+}
+        
+.nominatedMovies_movieCard {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 2px solid grey;
+  box-shadow: 10px 10px var(--primaryColor);
+  margin-bottom: 1.5rem;
+
+    
+  .nominatedMovies_movieThumbnail{
+    width: 32%;
+    
+    .nominatedMovies_posterSize{
+      width: 100%;
+    }
+  }
+    
+  .nominatedMovies_movieContent{
+      width: 60%;
+  }
+}
+        
+.close_nominatedMovies {
+  .close_icon {
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: inline-block;
+    float: right;
+    color: var(--primaryColor);
+  }
+  
+  .close_icon:hover {
+      cursor: pointer;
+      border-color: #000;
+      // transition-timing-function: ease-in;
+      transition-duration: .3s;
+      transform: scale(1.2, 1.2);
+      color: var(--secondaryColor)
+  }
+  
+  // .close_icon:active {
+//     color: var(--secondaryColor)
+// }
+}
+
+.basket {
+  position: fixed;
+  height: 100vh;
+  width: 22rem;
+  left: -22rem;
+  z-index: 1000;
+  overflow: scroll;
+  transition: transform .5s ease;
+}
+
+.basket-hide {
+  transform: translateX(0);
+  overflow: hidden;
+}
+
+.basket-show {
+  transform: translate3d(100%, 0, 0);
+}
+
+.content {
+  transition: all .5s ease;
+}
+
+.slideContent {
+  margin-left: 22rem;
+}
+

@@ -33,7 +33,6 @@ const Movies = () => {
 
   if(nominatedMovies) {
       nominatedMoviesIds = nominatedMovies.map(movie => movie.imdbId)
-      console.log(nominatedMoviesIds);
   }
 
   return (

@@ -6,7 +6,8 @@ import Footer from './Footer';
 import { AppContext } from './../context/appContext';
 
 const Content = () => {
-  const { basketOpen } = useContext(AppContext);
+  const [ state, dispatch ] = useContext(AppContext);
+  const { basketOpen } = state;
 
   return (
     <div className={`content ${basketOpen ? 'slideContent' : ''}`}>
