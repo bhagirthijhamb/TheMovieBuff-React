@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from 'react';
 import { AppContext } from './../context/appContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilm, faWindowClose } from '@fortawesome/free-solid-svg-icons';
-import { TOGGLE_BASKET } from './../context/types';
+import { TOGGLE_BASKET, UNDO_NOMINATE_MOVIE } from './../context/types';
 
 const NominatedMovies = () => {
   const [ state, dispatch ] = useContext(AppContext);
@@ -11,6 +11,10 @@ const NominatedMovies = () => {
   const toggleBasket = () => {
     dispatch({ type: TOGGLE_BASKET });
   }
+  const undoNominateMovie = (id) => {
+    dispatch({ type: UNDO_NOMINATE_MOVIE, payload: id })
+  }
+
   return (
     <section className="nominatedMovies_container">
       <span className="close_nominatedMovies">
@@ -33,7 +37,7 @@ const NominatedMovies = () => {
             <div className="nominatedMovies_movieContent">
               <p>Released on {movie.ReleaseDate}</p>
               <h3>{movie.Title}</h3>
-              {/* <button id={movie.imdbId} className="" onClick={() => undoNominateMovie(movie.imdbId)}>Remove</button> */}
+              <button id={movie.imdbId} className="" onClick={() => undoNominateMovie(movie.imdbId)}>Remove</button>
             </div>
           </li>
         )) : <div></div>}
