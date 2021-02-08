@@ -8,8 +8,7 @@ const Movies = () => {
   const [state, dispatch] = useContext(AppContext);
   const { movies, nominatedMovies } = state;
 
-console.log(nominatedMovies)
-
+  
   const handleNominate = (movie) => {
     console.log(movie);
     if(nominatedMovies.length < 5){
@@ -20,9 +19,16 @@ console.log(nominatedMovies)
         imdbId: movie.id
       }
       // nominateMovie(nominatedMovie);
-      dispatch({ type: NOMINATE_MOVIE, payload: nominatedMovie })
+      dispatch({ type: NOMINATE_MOVIE, payload: nominatedMovie });
+      
     }
+    console.log('nominatedMovies', nominatedMovies)
   }
+  
+  useEffect(() => {
+    localStorage.setItem('nominatedMovies', JSON.stringify(nominatedMovies));
+  }, [nominatedMovies])
+  
   let nominatedMoviesIds;
 
   if(nominatedMovies) {
