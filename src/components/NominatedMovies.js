@@ -35,9 +35,9 @@ const NominatedMovies = () => {
               }
             </div>
             <div className="nominatedMovies_movieContent">
-              <p>Released on {movie.ReleaseDate}</p>
+              <p className="releasedOn">Released: {movie.ReleaseDate}</p>
               <h3>{movie.Title}</h3>
-              <button id={movie.imdbId} className="" onClick={() => undoNominateMovie(movie.imdbId)}>Remove</button>
+              <button id={movie.imdbId} className="removeBtn" onClick={() => undoNominateMovie(movie.imdbId)}>Remove</button>
             </div>
           </li>
         )) : <div></div>}

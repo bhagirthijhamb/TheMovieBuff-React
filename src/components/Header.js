@@ -7,7 +7,6 @@ const Header = () => {
         <div className="wrapper">
           <div className="header_title">
             <h1>The Movie Buff</h1>
-            <img src={require('./../assets/peachHorizontal1.svg')} alt="squiggly text underline"/>
           </div>
           <div className="header_introText">
             <p>Welcome to The Movie Buff's 1st ever virtual movie awards!</p>

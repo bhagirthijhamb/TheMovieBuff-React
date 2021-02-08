@@ -35,18 +35,26 @@
   border: 2px solid grey;
   box-shadow: 10px 10px var(--primaryColor);
   margin-bottom: 1.5rem;
-
     
   .nominatedMovies_movieThumbnail{
     width: 32%;
-    
     .nominatedMovies_posterSize{
       width: 100%;
+      margin-top: .15rem;
+      margin-left: .15rem;
     }
-  }
-    
+  }  
   .nominatedMovies_movieContent{
-      width: 60%;
+    width: 60%;
+    padding-left: .5rem;
+
+    .releasedOn {
+      font-size: .9rem;
+    }
+
+    .removeBtn {
+      font-size: .9rem;
+    } 
   }
 }
         
