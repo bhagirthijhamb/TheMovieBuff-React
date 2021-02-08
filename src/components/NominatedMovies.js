@@ -21,6 +21,7 @@ const NominatedMovies = () => {
         <FontAwesomeIcon icon={faWindowClose} className="close_icon" onClick={toggleBasket}/>
       </span>
       <h2>Nominee List</h2>
+      <p>{nominatedMovies.length} movies nominated</p>
       <ul className="nominatedMovies_movieList">
         {nominatedMovies ? nominatedMovies.map(movie => (
           <li id={movie.imdbId} className="nominatedMovies_movieCard">
