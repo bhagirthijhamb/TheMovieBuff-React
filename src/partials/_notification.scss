@@ -1,0 +1,10 @@
+.notificationDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: salmon;
+  position: sticky;
+  top: 0px;
+  z-index: 10;
+  font-weight: bold;
+}
