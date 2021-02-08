@@ -6,9 +6,8 @@ export const AppContext = createContext();
 const nominatedMoviesFromLS = localStorage.getItem('nominatedMovies') ? JSON.parse(localStorage.getItem('nominatedMovies')) : [];
 
 const initialState = {
-  loadingMovies: false,
+  loading: false,
   movies: [],
-  movie: '',
   nominatedMovies: nominatedMoviesFromLS,
   basketOpen: false
 }

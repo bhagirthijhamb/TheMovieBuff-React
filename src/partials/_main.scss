@@ -1,0 +1,125 @@
+.searchMovie_container {
+  background-color: var(--secondaryColor);
+  padding: 6rem 0;
+
+  .searchMovie-area {
+    background-color: #fff;
+    padding: 1.5rem 2rem;
+    box-shadow: 16px 16px var(--primaryColor);
+    position: relative;
+
+    h2 {
+      margin-top: 0;
+      font-size: 3.5rem;
+      position: absolute;
+      top: -45px;
+      letter-spacing: -2px;
+    }
+
+    .instructions {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      margin: .5rem 0 .75rem;
+    }
+
+    form {
+      width: 70%;
+      position: relative;
+      display: inline-block;
+
+      .srOnly:not(:focus):not(:active) {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      input {
+        width: 100%;
+        height: 3.5rem;
+        padding: 0 1rem;
+        font-size: 1rem;
+        border: 3px solid var(--primaryColor);
+        font-family: "Montserrat", sans-serif;
+      }
+
+      button {
+        background-color: var(--primaryColor);
+        position: absolute;
+        right: 0;
+        height: 100%;
+        width: 4.5rem;
+        font-size: 1.5rem;
+        color: #fff;
+        border: none;
+      }
+    }
+    }
+}
+
+.instructionsItem {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    span{
+        font-family: "Rozha One", serif;
+        font-size: 4rem;
+        color: #ff685d;
+        margin-right: .5rem;
+    }
+}
+
+
+.movieResults_gridContainer {
+    padding: 3rem 0;
+    background-color: #f1fafd;
+    
+    .movieResults_movieList {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        grid-column-gap: 3.5rem;
+        grid-row-gap: 3rem;
+        padding: 1rem 1.5rem 1rem 1.5rem;
+        // background-image: 
+
+        .movieResults_movieCard {
+            border: 2px solid grey;
+            padding: 10px;
+            box-shadow: 14px 14px var(--primaryColor);
+        }
+    }
+
+    
+
+    .movieResults_movieThumbnail {
+    }
+
+    .posterSize {
+        // height: 16rem;
+        width: 100%;
+    }
+
+    .no-poster {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    h2 {
+        margin: 0;
+        margin-left: 1rem;
+        font-size: 3rem;
+        text-shadow: 6px 6px var(--primaryColor);
+        -webkit-text-fill-color: #fff;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: #383435;
+    }
+}

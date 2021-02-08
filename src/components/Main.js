@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { AppContext } from './../context/appContext';
 import { MOVIES_REQUEST, MOVIES_SUCCESS } from '../context/types';
+import Movies from './Movies';
 
 const Main = () => {
   const [movie, setMovie] = useState('');
@@ -13,7 +14,6 @@ const Main = () => {
   const fetchMovies = async(movie) => {
     try {
       dispatch({ type: MOVIES_REQUEST });
-
       const url = new URL('https://api.themoviedb.org/3/search/movie')
       const params = {
         api_key: "676b5c3c59b0364795481293b3792d6d",
@@ -28,8 +28,8 @@ const Main = () => {
 
       const response = await fetch(url);
       const result = await response.json();
-      console.log(result);
-      dispatch({ type: MOVIES_SUCCESS })
+      console.log(result.results);    
+      dispatch({ type: MOVIES_SUCCESS, payload: result.results })
     } catch(error){
       console.log(error)
     }
@@ -73,6 +73,7 @@ const Main = () => {
           </div>
         </div>
       </section>
+      <Movies />
     </main>
   )
 }
